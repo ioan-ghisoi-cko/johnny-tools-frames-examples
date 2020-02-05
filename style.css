@@ -1,0 +1,333 @@
+:root {
+	--cko-faded-blue: #879ca7;
+	--cko-blue: #013a51;
+	--cko-blue-hover: #025170;
+	--cko-green: #20c997;
+	--cko-green-hover: #27e2aa;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: HelveticaNeue, Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.landing-section {
+	width: 100vw;
+	height: 80vh;
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+	grid-template-rows: 70px 1fr 70px;
+	grid-template-areas: ". cko-header ."". landing-area ."". . .";
+}
+
+.cko-header {
+	grid-area: cko-header;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: left;
+}
+
+.cko-header .cko-logo {
+	height: 40%;
+	max-height: 70px;
+	margin: auto auto auto 0;
+	cursor: pointer;
+}
+
+.landing-area {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	grid-template-areas: "landing-info landing-image";
+	grid-area: landing-area;
+}
+
+.landing-info {
+	display: flex;
+	flex-direction: column;
+	grid-area: landing-info;
+	justify-content: center;
+}
+
+.landing-info .landing-text .cko-title {
+	color: var(--cko-faded-blue);
+	font-size: 45px;
+	font-weight: 500;
+}
+
+.landing-info .landing-text .cko-subtitle {
+	color: var(--subcko-faded-blue);
+	font-size: 45px;
+	font-weight: 500;
+}
+
+.landing-info .landing-text .cko-description {
+	margin-top: 2rem;
+	font-size: 18px;
+}
+
+.landing-info .landing-buttons {
+	margin-top: 2rem;
+	display: flex;
+	white-space: nowrap;
+	text-decoration: none;
+	font-size: 15px;
+}
+
+.landing-info .landing-buttons .landing-button {
+	margin-right: 10px;
+	padding: 0 14px;
+	color: #fff;
+	height: 40px;
+	border-radius: 5px;
+	border: unset;
+	background-color: var(--cko-blue);
+	font-size: 1rem;
+	cursor: pointer;
+	outline: none;
+}
+
+.landing-info .landing-buttons .landing-button:hover {
+	background-color: var(--cko-blue-hover);
+}
+
+.landing-info .landing-buttons .docs {
+	background-color: var(--cko-green)
+}
+
+.landing-info .landing-buttons .docs:hover {
+	background-color: var(--cko-green-hover)
+}
+
+.landing-info .landing-buttons .github {
+	background: unset;
+	color: var(--cko-green);
+	border: none;
+	font-weight: bold;
+}
+
+.landing-info .landing-buttons .github:hover {
+	background: unset;
+	color: var(--cko-green-hover)
+}
+
+.landing-image {
+	grid-area: landing-image;
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.landing-image .gif {
+	object-fit: contain;
+	width: 100%;
+	max-width: 1000px;
+	height: 100%;
+	transform: perspective(400px) rotateY(-12deg);
+}
+
+.cko-example {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100vw;
+	height: 60vh;
+	margin-bottom: 4rem;
+}
+
+.cko-example .area {
+	width: 50vw;
+	height: 100%;
+	background: #ffffff;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 5px;
+	/* box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08); */
+}
+
+.cko-example .source-button {
+	margin-top: 20px;
+	padding: 10px;
+	background: unset;
+	color: rgba(0, 0, 0, 0.2);
+	border: none;
+	font-size: 14px;
+	cursor: pointer;
+	outline: none;
+}
+
+.cko-example .source-button:hover {
+	color: var(--cko-green);
+}
+
+.cko-example .code-icon {
+	font-family: monospace;
+}
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+	.landing-info .landing-text .cko-title {
+		font-size: 45px;
+	}
+
+	.landing-info .landing-text .cko-subtitle {
+		font-size: 45px;
+	}
+
+	.landing-info .landing-text .cko-description {
+		font-size: 18px;
+	}
+
+	.landing-info .landing-buttons .landing-button {
+		height: 40px;
+		font-size: 15px;
+		padding: 0 20px;
+	}
+}
+
+/* 
+	##Device = Tablets, Ipads (portrait)
+	##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	.landing-section {
+		grid-template-columns: 1fr vw 1fr;
+	}
+
+	.landing-info .landing-text .cko-title {
+		font-size: 30px;
+	}
+
+	.landing-info .landing-text .cko-subtitle {
+		font-size: 30px;
+	}
+
+	.landing-info .landing-text .cko-description {
+		font-size: 12px;
+	}
+
+	.landing-info .landing-buttons .landing-button {
+		height: 30px;
+		font-size: 13px;
+		padding: 0 9px;
+	}
+
+	.cko-example {
+		height: 50vh;
+	}
+
+	.cko-example .area {
+		width: 70vw;
+		height: 100%;
+	}
+}
+
+/* 
+	##Device = Tablets, Ipads (landscape)
+	##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+	.cko-example {
+		height: 70vh;
+	}
+
+	.cko-example .area {
+		width: 70vw;
+		height: 100%;
+	}
+}
+
+/* 
+	##Device = Most of the Smartphones Mobiles (Portrait)
+	##Screen = B/w 320px to 479px
+  */
+
+@media (min-width: 320px) and (max-width: 480px) {
+	.landing-section {
+		height: 100vh;
+	}
+
+	.landing-info .landing-text .cko-title {
+		font-size: 30px;
+	}
+
+	.landing-info .landing-text .cko-subtitle {
+		font-size: 30px;
+	}
+
+	.landing-info .landing-text .cko-description {
+		font-size: 14px;
+	}
+
+	.landing-info .landing-buttons .landing-button {
+		height: 30px;
+		font-size: 13px;
+		padding: 0 9px;
+	}
+
+	.landing-area {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1.2fr;
+		grid-template-areas: "landing-image""landing-info";
+		grid-area: landing-area;
+	}
+
+	.landing-image .gif {
+		transform: perspective(400px) rotateX(12deg);
+	}
+
+	.cko-example {
+		height: 60vh;
+		min-height: 280px;
+	}
+
+	.cko-example .area {
+		width: 100vw;
+		height: 100%;
+	}
+}
+
+@media screen and (max-width: 812px) and (orientation:landscape) {
+	.landing-section {
+		height: 100vh;
+	}
+
+	.landing-info .landing-text .cko-title {
+		font-size: 30px;
+	}
+
+	.landing-info .landing-text .cko-subtitle {
+		font-size: 30px;
+	}
+
+	.landing-info .landing-text .cko-description {
+		font-size: 14px;
+	}
+
+	.landing-info .landing-buttons .landing-button {
+		height: 30px;
+		font-size: 13px;
+		padding: 0 9px;
+	}
+
+	.cko-example {
+		height: 95vh;
+		min-height: 280px;
+	}
+
+	.cko-example .area {
+		width: 90vw;
+		height: 100%;
+	}
+}
