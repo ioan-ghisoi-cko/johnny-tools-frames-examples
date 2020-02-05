@@ -49,8 +49,8 @@ body {
 	background: #F0F0F0;
 	transform: perspective(600px) rotateY(0deg);
 	display: grid;
-	width: 520px;
-	height: 322px;
+	width: 500px;
+	height: 302px;
 	padding: 35px;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 60px 1fr 1fr;
@@ -184,4 +184,17 @@ body {
 .card {
 	transform: translate(-50%, -50%) rotate(-30deg) skew(25deg);
 	transition: transform .6s linear;
+}
+
+#flip {
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	background-color: #1a4b7c;
+	color: #fff;
+	outline: unset;
+}
+
+#flip:hover {
+	background-color: #13395e;
 }

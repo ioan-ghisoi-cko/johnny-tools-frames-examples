@@ -3,20 +3,20 @@ var form = document.getElementById("payment-form");
 var front = document.getElementById("front");
 
 Frames.init({
-	publicKey: 'pk_test_6ff46046-30af-41d9-bf58-929022d2cd14',
-	localization: {
-		cardNumberPlaceholder: "1234 1234 1234 1234",
-		expiryMonthPlaceholder: "02",
-		expiryYearPlaceholder: "29",
-		cvvPlaceholder: "CVC",
-	},
-	debug: true,
-	style: {
-		base :{
-			fontSize: "40px"
-		}
-	}
-})
+  publicKey: "pk_test_6ff46046-30af-41d9-bf58-929022d2cd14",
+  localization: {
+    cardNumberPlaceholder: "1234 1234 1234 1234",
+    expiryMonthPlaceholder: "02",
+    expiryYearPlaceholder: "29",
+    cvvPlaceholder: "CVC"
+  },
+  debug: true,
+  style: {
+    base: {
+      fontSize: "40px"
+    }
+  }
+});
 
 Frames.addEventHandler(
   Frames.Events.FRAME_VALIDATION_CHANGED,
@@ -50,10 +50,10 @@ function showPaymentMethodIcon(parent, pm) {
 
 function clearPaymentMethodIcon(parent) {
   if (parent) parent.classList.remove("show");
-  
+
   var logo = document.getElementById("logo-payment-method");
   logo.style.setProperty("display", "none");
-} 
+}
 
 Frames.addEventHandler(
   Frames.Events.CARD_VALIDATION_CHANGED,
@@ -66,8 +66,11 @@ function cardValidationChanged(event) {
 Frames.addEventHandler(Frames.Events.CARD_TOKENIZED, onCardTokenized);
 function onCardTokenized(event) {
   var el = document.querySelector(".success-payment-message");
-  el.innerHTML = "Card tokenization completed<br>" +
-  "Your card token is: <span class=\"token\">" + event.token + "</span>";
+  el.innerHTML =
+    "Card tokenization completed<br>" +
+    'Your card token is: <span class="token">' +
+    event.token +
+    "</span>";
 }
 
 Frames.addEventHandler(
@@ -85,17 +88,17 @@ function paymentMethodChanged(event) {
   }
 }
 
-var flipper = document.getElementById('flip');
+var flipper = document.getElementById("flip");
 
-flipper.addEventListener('click', function () {
-	document.getElementById('front').classList.toggle("nice-front");
-	document.getElementById('back').classList.toggle("nice-back");
+flipper.addEventListener("click", function() {
+  document.getElementById("front").classList.toggle("nice-front");
+  document.getElementById("back").classList.toggle("nice-back");
 });
 
 front.addEventListener("mouseenter", function() {
-	document.getElementById('main-wrapper').classList.add("bring-forward");
+  document.getElementById("main-wrapper").classList.add("bring-forward");
+  document.getElementById("flip").style.removeProperty("display");
 });
-
 
 // form.addEventListener("submit", onSubmit);
 // function onSubmit(event) {
