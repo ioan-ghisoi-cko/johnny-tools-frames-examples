@@ -120,7 +120,7 @@ Frames.addEventHandler(
       container.classList.remove('show')
     } else {
       var name = pm.toLowerCase()
-      logo.setAttribute('src', '/examples/frames-material/images/card-icons/' + name + '.svg')
+      logo.setAttribute('src', 'images/card-icons/' + name + '.svg')
       logo.setAttribute('alt', pm || 'payment method')
       logo.style.removeProperty('display')
       container.classList.add('show')

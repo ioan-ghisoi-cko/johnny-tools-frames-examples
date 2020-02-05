@@ -87,7 +87,7 @@ function showPaymentMethodIcon(parent, pm) {
   var logo = document.getElementById("logo-payment-method");
   if (pm) {
     var name = pm.toLowerCase();
-    logo.setAttribute("src", "/examples/frames-gamming/images/card-icons/" + name + ".svg");
+    logo.setAttribute("src", "images/card-icons/" + name + ".svg");
     logo.setAttribute("alt", pm || "payment method");
   }
   logo.style.removeProperty("display");
