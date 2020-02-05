@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content='width=device-width, initialscale=1.0, maximum-scale=1.0, user-scalable=0'>
+	<title>Document</title>
+</head>
+
+<body>
+
+	<div id="main-wrapper" class="card middle">
+		<div id="front" class="front">
+			<div class="card-chip">
+
+			</div>
+			<div class="card-scheme">
+				<div class="icon-container payment-method">
+					<img class="logo-payment-method" id="logo-payment-method" />
+				</div>
+			</div>
+			<div class="card-number-area">
+				<label class="field-label" for="card-number">Card number</label>
+				<div class="input-container card-number">
+					<div class="card-number-frame"></div>
+				</div>
+			</div>
+			<div class="card-name-area">
+				<label class="field-label" id="name-label" for="name">Cardholder Name</label>
+				<div class="input-container name">
+					<input type="text" name="name" class="name" placeholder="John Smith">
+				</div>
+			</div>
+			<div class="card-date-area">
+				<label class="field-label" for="expiry-date">Expiry date</label>
+				<div class="input-container expiry-date">
+					<div class="expiry-date-frame"></div>
+				</div>
+			</div>
+		</div>
+		<div id="back" class="back">
+			<div class="magnetic-band"></div>
+			<label class="field-label cvv-label" for="expiry-date">Expiry date</label>
+			<div class="cvv-frame"></div>
+		</div>
+	</div>
+	</div>
+
+	<button id="flip">
+		Flip
+	</button>
+
+	<script src="https://cdn.checkout.com/js/framesv2.min.js"></script>
+	<script src="app.js"></script>
+
+</body>
+
+</html>
